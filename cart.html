@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Furniro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/cart.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <div class="logo-icon">🪑</div>
+            <span>Furniro</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-icons">
+            <i class="far fa-user"></i>
+            <i class="fas fa-search"></i>
+            <i class="far fa-heart"></i>
+            <i class="fas fa-shopping-cart"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-icon">🏠</div>
+            <h1>Cart</h1>
+            <div class="breadcrumb">
+                <a href="#home">Home</a>
+                <span>›</span>
+                <span>Cart</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Cart Items -->
+        <div>
+            <div class="cart-section">
+                <div class="cart-header">
+                    <div>Product</div>
+                    <div>Price</div>
+                    <div>Quantity</div>
+                    <div>Subtotal</div>
+                    <div></div>
+                </div>
+
+                <div class="cart-item" id="cartItem1">
+                    <div class="product-info">
+                        <div class="product-image">
+                            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23F9F1E7' width='100' height='100'/><text x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23B88E2F' font-size='30'>🪑</text></svg>" alt="Asgaard sofa">
+                        </div>
+                        <span>Asgaard sofa</span>
+                    </div>
+                    <div class="price">Rs. 250,000.00</div>
+                    <div>
+                        <input type="number" class="quantity-input" value="1" min="1" onchange="updateCart()">
+                    </div>
+                    <div class="subtotal">Rs. 250,000.00</div>
+                    <div>
+                        <button class="delete-btn" onclick="removeItem()"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cart Totals -->
+        <div class="cart-totals">
+            <h2>Cart Totals</h2>
+            <div class="total-row">
+                <span>Subtotal</span>
+                <span class="price" id="subtotal">Rs. 250,000.00</span>
+            </div>
+            <div class="total-row final">
+                <span>Total</span>
+                <span id="total">Rs. 250,000.00</span>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Check Out</button>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-grid">
+            <div class="feature-item">
+                <i class="fas fa-trophy"></i>
+                <h3>High Quality</h3>
+                <p>Crafted from top materials</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Warranty Protection</h3>
+                <p>Over 2 years</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-shipping-fast"></i>
+                <h3>Free Shipping</h3>
+                <p>Order over 150 $</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-headset"></i>
+                <h3>24 / 7 Support</h3>
+                <p>Dedicated support</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Funiro.</h3>
+                <p>400 University Drive Suite 200 Coral</p>
+                <p>Gables,</p>
+                <p>FL 33134 USA</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#shop">Shop</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Help</h3>
+                <ul class="footer-links">
+                    <li><a href="#payment">Payment Options</a></li>
+                    <li><a href="#returns">Returns</a></li>
+                    <li><a href="#privacy">Privacy Policies</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <div class="newsletter">
+                    <input type="email" placeholder="Enter Your Email Address">
+                    <button>SUBSCRIBE</button>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            2023 furino. All rights reserved
+        </div>
+    </footer>
+<script src="./assets/js/cart.js"></script>
+   
+</body>
+</html>
