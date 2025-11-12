@@ -118,12 +118,51 @@
   // Initialize
   renderPage();
 
-  // Add to cart feedback
+  // Make product cards clickable to navigate to product detail page
   grid.addEventListener('click', (e) => {
-    const btn = e.target.closest('.btn-add');
-    if (!btn) return;
-    btn.textContent = 'Added!';
-    setTimeout(() => (btn.textContent = 'Add to cart'), 1200);
+    const card = e.target.closest('.product-card');
+    if (!card) return;
+    
+    // Don't navigate if clicking on buttons or overlay actions
+    if (e.target.closest('.btn-add') || e.target.closest('.overlay-action') || e.target.closest('.overlay')) {
+      // Handle add to cart
+      const btn = e.target.closest('.btn-add');
+      if (btn) {
+        const product = {
+          id: card.dataset.name?.toLowerCase() || `product-${Date.now()}`,
+          name: card.dataset.name || 'Product',
+          subtitle: card.querySelector('.card-sub')?.textContent || '',
+          price: card.querySelector('.price')?.textContent || 'Rp 0',
+          priceOld: card.querySelector('.price-old')?.textContent || '',
+          image: card.querySelector('.product-img')?.getAttribute('src') || '',
+          badge: card.querySelector('.badge')?.classList.contains('badge-sale') ? 'sale' : 
+                 card.querySelector('.badge')?.classList.contains('badge-new') ? 'new' : '',
+          badgeText: card.querySelector('.badge')?.textContent || ''
+        };
+        
+        // Add to cart using cart utilities
+        if (typeof addToCart === 'function') {
+          addToCart(product);
+          btn.textContent = 'Added!';
+          setTimeout(() => (btn.textContent = 'Add to cart'), 1200);
+        } else {
+          btn.textContent = 'Added!';
+          setTimeout(() => (btn.textContent = 'Add to cart'), 1200);
+        }
+      }
+      return;
+    }
+    
+    // Navigate to product detail page
+    const productId = card.dataset.name?.toLowerCase();
+    if (productId) {
+      window.location.href = `product-detail.html?id=${productId}`;
+    }
+  });
+  
+  // Make product cards have pointer cursor
+  grid.querySelectorAll('.product-card').forEach(card => {
+    card.style.cursor = 'pointer';
   });
 })();
 

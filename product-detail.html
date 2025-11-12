@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Furniro</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/product-detail.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="assets/images/logo.png" alt="Furniro Logo" class="logo-image">
+                    <span class="logo-text">Furniro</span>
+                </div>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="shop.html" class="nav-link">Shop</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+                <div class="utility-icons">
+                    <a class="icon-link" href="account.html" aria-label="Account">
+                        <img class="icon-image" src="assets/images/icons/account_icon.png" alt="Account">
+                    </a>
+                    <a class="icon-link" href="#" aria-label="Search">
+                        <img class="icon-image" src="assets/images/icons/search_icon.png" alt="Search">
+                    </a>
+                    <a class="icon-link" href="wishlist.html" aria-label="Wishlist">
+                        <img class="icon-image" src="assets/images/icons/wishlist_icon.png" alt="Wishlist">
+                    </a>
+                    <a class="icon-link" href="cart.html" aria-label="Shopping Cart">
+                        <img class="icon-image" src="assets/images/icons/cart_icon.png" alt="Shopping Cart">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="product-hero">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <a href="shop.html">Shop</a>
+                <span>/</span>
+                <span id="productBreadcrumb">Product</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Product Detail Section -->
+    <section class="product-detail-section">
+        <div class="container">
+            <div class="product-detail-layout">
+                <!-- Left Column - Product Images -->
+                <div class="product-images">
+                    <div class="main-image">
+                        <img id="mainProductImage" src="" alt="Product Image">
+                    </div>
+                    <div class="thumbnail-images" id="thumbnailImages">
+                        <!-- Thumbnails will be dynamically added -->
+                    </div>
+                </div>
+
+                <!-- Right Column - Product Info -->
+                <div class="product-info-section">
+            <h1 id="productName" class="product-name">Product Name</h1>
+            <div class="product-price-section">
+                <span id="productPrice" class="product-price">Rp 0</span>
+            </div>
+            <div class="product-rating">
+                <div class="stars">★★★★★</div>
+                <span class="reviews-count">5 Customer Review</span>
+            </div>
+            <p id="productDescription" class="product-description">
+                Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. The analogue knobs allow you to fine tune the controls to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.
+            </p>
+                    
+                    <!-- Size Selection -->
+                    <div class="product-option-group">
+                        <label class="option-label">Size</label>
+                        <div class="size-options">
+                            <button class="size-btn active" data-size="L">L</button>
+                            <button class="size-btn" data-size="XL">XL</button>
+                            <button class="size-btn" data-size="XS">XS</button>
+                        </div>
+                    </div>
+
+                    <!-- Color Selection -->
+                    <div class="product-option-group">
+                        <label class="option-label">Color</label>
+                        <div class="color-options">
+                            <button class="color-btn active" data-color="purple" style="background: #816DFA; border: 2px solid #816DFA;"></button>
+                            <button class="color-btn" data-color="black" style="background: #000;"></button>
+                            <button class="color-btn" data-color="gold" style="background: #B88E2F;"></button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-actions">
+                        <div class="quantity-selector">
+                            <div class="quantity-controls">
+                                <button class="qty-btn" id="decreaseQty">-</button>
+                                <input type="number" id="productQuantity" value="1" min="1" max="10">
+                                <button class="qty-btn" id="increaseQty">+</button>
+                            </div>
+                        </div>
+                        <button class="btn-add-to-cart" id="addToCartBtn">Add To Cart</button>
+                        <button class="btn-compare" id="compareBtn">+ Compare</button>
+                    </div>
+
+                    <div class="product-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">SKU :</span>
+                            <span class="spec-value" id="productSku">SS001</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Category :</span>
+                            <span class="spec-value" id="productCategory">Sofas</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Tags :</span>
+                            <span class="spec-value" id="productTags">Sofa, Chair, Home, Shop</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Share :</span>
+                            <div class="social-share">
+                                <a href="#" class="share-link">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/>
+                                    </svg>
+                                </a>
+                                <a href="#" class="share-link">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                    </svg>
+                                </a>
+                                <a href="#" class="share-link">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Description Tabs -->
+    <section class="product-tabs-section">
+        <div class="container">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="description">Description</button>
+                <button class="tab-btn" data-tab="specifications">Additional Information</button>
+                <button class="tab-btn" data-tab="reviews">Reviews [5]</button>
+            </div>
+            <div class="tab-content active" id="descriptionTab">
+                <p>Embodying the raw, wayward spirit of rock 'n' roll, the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road.</p>
+                <p>Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. The analogue knobs allow you to fine tune the controls to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.</p>
+                <div class="description-images">
+                    <img src="assets/images/Our_products/lolito.png" alt="Product Image 1">
+                    <img src="assets/images/Our_products/lolito.png" alt="Product Image 2">
+                </div>
+            </div>
+            <div class="tab-content" id="specificationsTab">
+                <table class="specs-table">
+                    <tr>
+                        <td><strong>Material</strong></td>
+                        <td>Fabric, Wood, Metal</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dimensions</strong></td>
+                        <td>120cm x 80cm x 60cm</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Weight</strong></td>
+                        <td>25 kg</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Color</strong></td>
+                        <td>Brown, Beige, Gray</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Warranty</strong></td>
+                        <td>2 Years</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="tab-content" id="reviewsTab">
+                <div class="review-item">
+                    <div class="review-header">
+                        <strong>John Doe</strong>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                    <p class="review-text">Great product! Very comfortable and well-made. Highly recommend!</p>
+                </div>
+                <div class="review-item">
+                    <div class="review-header">
+                        <strong>Jane Smith</strong>
+                        <div class="review-stars">★★★★☆</div>
+                    </div>
+                    <p class="review-text">Good quality furniture. Fast shipping and excellent customer service.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="related-products-section">
+        <div class="container">
+            <h2 class="section-title">Related Products</h2>
+            <div class="product-grid" id="relatedProducts">
+                <!-- Related products will be dynamically loaded -->
+            </div>
+            <div class="show-more-wrapper" style="text-align: center; margin-top: 40px;">
+                <button class="show-more-btn" id="showMoreRelated">Show More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Strip -->
+    <section class="benefits">
+        <div class="container benefits-inner">
+            <div class="benefit-item">
+                <div class="benefit-icon" aria-hidden="true">🏆</div>
+                <div class="benefit-content">
+                    <h4 class="benefit-title">High Quality</h4>
+                    <p class="benefit-sub">crafted from top materials</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon" aria-hidden="true">✅</div>
+                <div class="benefit-content">
+                    <h4 class="benefit-title">Warranty Protection</h4>
+                    <p class="benefit-sub">Over 2 years</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon" aria-hidden="true">📦</div>
+                <div class="benefit-content">
+                    <h4 class="benefit-title">Free Shipping</h4>
+                    <p class="benefit-sub">Order over 150 $</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon" aria-hidden="true">🎧</div>
+                <div class="benefit-content">
+                    <h4 class="benefit-title">24 / 7 Support</h4>
+                    <p class="benefit-sub">Dedicated support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 class="footer-brand">Funiro.</h3>
+                    <p class="footer-address">400 University Drive Suite 200 Coral Gables, FL 33134 USA</p>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="shop.html" class="footer-link">Shop</a></li>
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Help</h4>
+                    <ul class="footer-links">
+                        <li><a href="checkout.html" class="footer-link">Payment Options</a></li>
+                        <li><a href="#" class="footer-link">Returns</a></li>
+                        <li><a href="#" class="footer-link">Privacy Policies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Newsletter</h4>
+                    <form class="newsletter-form" id="newsletterFormProduct">
+                        <div class="newsletter-input-wrapper">
+                            <input type="email" class="newsletter-input" placeholder="Enter Your Email Address" required>
+                            <button type="submit" class="newsletter-button">SUBSCRIBE</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                <p class="copyright-text">2023 furino. All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/cart-utils.js"></script>
+    <script src="assets/js/product-detail.js"></script>
+</body>
+</html>
+

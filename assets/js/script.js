@@ -332,6 +332,11 @@ style.textContent = `
 document.head.appendChild(style);
 
 
+// Load cart utilities
+const cartScript = document.createElement('script');
+cartScript.src = 'assets/js/cart-utils.js';
+document.head.appendChild(cartScript);
+
 // Product interactions
 const DEFAULT_LIKE_OFF_ICON = 'data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2218%22%20height%3D%2218%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M20.8%204.6c-1.5-1.4-3.9-1.4-5.4%200L12%208l-3.4-3.4c-1.5-1.4-3.9-1.4-5.4%200-1.6%201.5-1.6%203.9%200%205.4l8.1%208c.3.3.8.3%201.1%200l8.1-8c1.5-1.5%201.5-3.9%200-5.4z%22/%3E%3C/svg%3E';
 const DEFAULT_LIKE_ON_ICON = 'data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2218%22%20height%3D%2218%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%23ffd166%22%20stroke%3D%22%23ffd166%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M20.8%204.6c-1.5-1.4-3.9-1.4-5.4%200L12%208l-3.4-3.4c-1.5-1.4-3.9-1.4-5.4%200-1.6%201.5-1.6%203.9%200%205.4l8.1%208c.3.3.8.3%201.1%200l8.1-8c1.5-1.5%201.5-3.9%200-5.4z%22/%3E%3C/svg%3E';
@@ -389,6 +394,19 @@ function setupProductInteractions() {
 function bindProductCard(card) {
     if (!card || card.dataset.interactionsBound === 'true') return;
     card.dataset.interactionsBound = 'true';
+    
+    // Make product card clickable to navigate to product detail page
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', function(e) {
+        // Don't navigate if clicking on buttons or links
+        if (e.target.closest('button') || e.target.closest('a') || e.target.closest('.overlay-action')) {
+            return;
+        }
+        const productId = card.dataset.productId || card.dataset.productName?.toLowerCase();
+        if (productId) {
+            window.location.href = `product-detail.html?id=${productId}`;
+        }
+    });
 
     const likeBtn = card.querySelector('.like-toggle');
     if (likeBtn) {
@@ -417,8 +435,24 @@ function bindProductCard(card) {
     if (addCartBtn) {
         addCartBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            const productName = card.dataset.productName || addCartBtn.getAttribute('data-product') || 'Item';
-            showToast(`${productName} added to cart`);
+            const product = {
+                id: card.dataset.productId || card.dataset.productName?.toLowerCase() || `product-${Date.now()}`,
+                name: card.dataset.productName || addCartBtn.getAttribute('data-product') || 'Item',
+                subtitle: card.dataset.productSubtitle || '',
+                price: card.dataset.productPrice || 'Rp 0',
+                priceOld: card.dataset.productPriceOld || '',
+                image: card.dataset.productImage || card.querySelector('.product-image')?.getAttribute('src') || '',
+                badge: card.dataset.productBadge || '',
+                badgeText: card.dataset.productBadgeText || ''
+            };
+            
+            // Add to cart using cart utilities
+            if (typeof addToCart === 'function') {
+                addToCart(product);
+                showToast(`${product.name} added to cart`);
+            } else {
+                showToast(`${product.name} added to cart`);
+            }
         });
     }
 

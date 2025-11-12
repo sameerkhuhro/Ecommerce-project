@@ -4,253 +4,279 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout - Furniro</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-   <link rel="stylesheet" href="./assets/css/checkout.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/checkout.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="logo">
-            <svg class="logo-icon" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M25 10L15 20V40H35V20L25 10Z" fill="#B88E2F"/>
-                <path d="M15 25H35" stroke="#B88E2F" stroke-width="2"/>
-            </svg>
-            <span>Furniro</span>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="assets/images/logo.png" alt="Furniro Logo" class="logo-image">
+                    <span class="logo-text">Furniro</span>
+                </div>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="shop.html" class="nav-link">Shop</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+                <div class="utility-icons">
+                    <a class="icon-link" href="account.html" aria-label="Account">
+                        <img class="icon-image" src="assets/images/icons/account_icon.png" alt="Account">
+                    </a>
+                    <a class="icon-link" href="#" aria-label="Search">
+                        <img class="icon-image" src="assets/images/icons/search_icon.png" alt="Search">
+                    </a>
+                    <a class="icon-link" href="wishlist.html" aria-label="Wishlist">
+                        <img class="icon-image" src="assets/images/icons/wishlist_icon.png" alt="Wishlist">
+                    </a>
+                    <a class="icon-link" href="cart.html" aria-label="Shopping Cart">
+                        <img class="icon-image" src="assets/images/icons/cart_icon.png" alt="Shopping Cart">
+                    </a>
+                </div>
+            </div>
         </div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#shop">Shop</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="nav-icons">
-            <i class="far fa-user"></i>
-            <i class="fas fa-search"></i>
-            <i class="far fa-heart"></i>
-            <i class="fas fa-shopping-cart"></i>
-        </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-icon">
-            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M25 10L15 20V40H35V20L25 10Z" fill="#B88E2F"/>
-                <path d="M15 25H35M20 30H30" stroke="#B88E2F" stroke-width="2"/>
-            </svg>
-        </div>
-        <h1>Checkout</h1>
-        <div class="breadcrumb">
-            <a href="#home">Home</a>
-            <span>›</span>
-            <span>Checkout</span>
+    <!-- Page Banner -->
+    <section class="checkout-hero" style="background-image: url('assets/images/shop_back.png'); background-size: cover; background-position: center;">
+        <div class="checkout-hero-inner container">
+            <h1 class="checkout-title">Checkout</h1>
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Checkout</span>
+            </nav>
         </div>
     </section>
 
     <!-- Main Content -->
-    <div class="container">
-        <!-- Billing Details -->
-        <div class="billing-section">
-            <h2>Billing details</h2>
-            <form id="checkoutForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>First Name</label>
-                        <input type="text" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Last Name</label>
-                        <input type="text" required>
-                    </div>
+    <section class="checkout-content">
+        <div class="container">
+            <div class="checkout-layout">
+                <!-- Billing Details -->
+                <div class="billing-section">
+                    <h2>Billing details</h2>
+                    <form id="checkoutForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input type="text" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input type="text" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Company Name (Optional)</label>
+                            <input type="text">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Country / Region</label>
+                            <select required>
+                                <option value="">Select country</option>
+                                <option value="sri-lanka" selected>Sri Lanka</option>
+                                <option value="india">India</option>
+                                <option value="pakistan">Pakistan</option>
+                                <option value="usa">United States</option>
+                                <option value="uk">United Kingdom</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Street address</label>
+                            <input type="text" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Town / City</label>
+                            <input type="text" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Province</label>
+                            <select required>
+                                <option value="">Select province</option>
+                                <option value="western" selected>Western Province</option>
+                                <option value="central">Central Province</option>
+                                <option value="southern">Southern Province</option>
+                                <option value="northern">Northern Province</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>ZIP code</label>
+                            <input type="text" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="tel" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email address</label>
+                            <input type="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Additional information</label>
+                            <textarea placeholder="Additional information" rows="4"></textarea>
+                        </div>
+                    </form>
                 </div>
 
-                <div class="form-group">
-                    <label>Company Name (Optional)</label>
-                    <input type="text">
-                </div>
+                <!-- Order Summary -->
+                <div class="order-section">
+                    <div class="order-summary">
+                        <div class="product-header">
+                            <span>Product</span>
+                            <span>Subtotal</span>
+                        </div>
 
-                <div class="form-group">
-                    <label>Country / Region</label>
-                    <select required>
-                        <option value="">Select country</option>
-                        <option value="sri-lanka">Sri Lanka</option>
-                        <option value="india">India</option>
-                        <option value="pakistan">Pakistan</option>
-                        <option value="usa">United States</option>
-                        <option value="uk">United Kingdom</option>
-                    </select>
-                </div>
+                        <div class="product-item">
+                            <div class="product-name">
+                                <span>Asgaard sofa</span>
+                                <span class="product-quantity">× 1</span>
+                            </div>
+                            <span>Rs. 250,000.00</span>
+                        </div>
 
-                <div class="form-group">
-                    <label>Street address</label>
-                    <input type="text" required>
-                </div>
+                        <div class="order-totals">
+                            <div class="total-row">
+                                <span>Subtotal</span>
+                                <span>Rs. 250,000.00</span>
+                            </div>
+                            <div class="total-row final">
+                                <span>Total</span>
+                                <span>Rs. 250,000.00</span>
+                            </div>
+                        </div>
 
-                <div class="form-group">
-                    <label>Town / City</label>
-                    <input type="text" required>
-                </div>
+                        <!-- Payment Methods -->
+                        <div class="payment-methods">
+                            <div class="payment-option">
+                                <label>
+                                    <input type="radio" name="payment" value="bank-transfer" checked>
+                                    Direct Bank Transfer
+                                </label>
+                                <p class="payment-description">
+                                    Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.
+                                </p>
+                            </div>
 
-                <div class="form-group">
-                    <label>Province</label>
-                    <select required>
-                        <option value="">Select province</option>
-                        <option value="western">Western Province</option>
-                        <option value="central">Central Province</option>
-                        <option value="southern">Southern Province</option>
-                        <option value="northern">Northern Province</option>
-                    </select>
-                </div>
+                            <div class="payment-option">
+                                <label>
+                                    <input type="radio" name="payment" value="bank-transfer2">
+                                    Direct Bank Transfer
+                                </label>
+                            </div>
 
-                <div class="form-group">
-                    <label>ZIP code</label>
-                    <input type="text" required>
-                </div>
+                            <div class="payment-option">
+                                <label>
+                                    <input type="radio" name="payment" value="cash-on-delivery">
+                                    Cash On Delivery
+                                </label>
+                            </div>
+                        </div>
 
-                <div class="form-group">
-                    <label>Phone</label>
-                    <input type="tel" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Email address</label>
-                    <input type="email" required>
-                </div>
-
-                <div class="form-group">
-                    <input type="text" placeholder="Additional information" style="margin-top: 20px;">
-                </div>
-            </form>
-        </div>
-
-        <!-- Order Summary -->
-        <div class="order-section">
-            <div class="order-summary">
-                <div class="product-header">
-                    <span>Product</span>
-                    <span>Subtotal</span>
-                </div>
-
-                <div class="product-item">
-                    <div class="product-name">
-                        <span>Asgaard sofa</span>
-                        <span class="product-quantity">× 1</span>
-                    </div>
-                    <span>Rs. 250,000.00</span>
-                </div>
-
-                <div class="order-totals">
-                    <div class="total-row">
-                        <span>Subtotal</span>
-                        <span>Rs. 250,000.00</span>
-                    </div>
-                    <div class="total-row final">
-                        <span>Total</span>
-                        <span>Rs. 250,000.00</span>
-                    </div>
-                </div>
-
-                <!-- Payment Methods -->
-                <div class="payment-methods">
-                    <div class="payment-option">
-                        <label>
-                            <input type="radio" name="payment" value="bank-transfer" checked>
-                            Direct Bank Transfer
-                        </label>
-                        <p class="payment-description">
-                            Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.
+                        <p class="privacy-text">
+                            Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our <a href="#privacy">privacy policy</a>.
                         </p>
-                    </div>
 
-                    <div class="payment-option">
-                        <label>
-                            <input type="radio" name="payment" value="bank-transfer2">
-                            Direct Bank Transfer
-                        </label>
-                    </div>
-
-                    <div class="payment-option">
-                        <label>
-                            <input type="radio" name="payment" value="cash-on-delivery">
-                            Cash On Delivery
-                        </label>
+                        <button class="place-order-btn" onclick="placeOrder()">Place order</button>
                     </div>
                 </div>
-
-                <p class="privacy-text">
-                    Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our <a href="#privacy">privacy policy</a>.
-                </p>
-
-                <button class="place-order-btn" onclick="placeOrder()">Place order</button>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Features Section -->
-    <section class="features">
-        <div class="features-grid">
-            <div class="feature-item">
-                <i class="fas fa-trophy"></i>
-                <h3>High Quality</h3>
-                <p>Crafted from top materials</p>
+    <!-- Benefits Strip -->
+    <section class="benefits">
+        <div class="container benefits-inner">
+            <div class="benefit-item">
+                <div class="benefit-icon" aria-hidden="true">🏆</div>
+                <div class="benefit-content">
+                    <h4 class="benefit-title">High Quality</h4>
+                    <p class="benefit-sub">crafted from top materials</p>
+                </div>
             </div>
-            <div class="feature-item">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Warranty Protection</h3>
-                <p>Over 2 years</p>
+            <div class="benefit-item">
+                <div class="benefit-icon" aria-hidden="true">✅</div>
+                <div class="benefit-content">
+                    <h4 class="benefit-title">Warranty Protection</h4>
+                    <p class="benefit-sub">Over 2 years</p>
+                </div>
             </div>
-            <div class="feature-item">
-                <i class="fas fa-shipping-fast"></i>
-                <h3>Free Shipping</h3>
-                <p>Order over 150 $</p>
+            <div class="benefit-item">
+                <div class="benefit-icon" aria-hidden="true">📦</div>
+                <div class="benefit-content">
+                    <h4 class="benefit-title">Free Shipping</h4>
+                    <p class="benefit-sub">Order over 150 $</p>
+                </div>
             </div>
-            <div class="feature-item">
-                <i class="fas fa-headset"></i>
-                <h3>24 / 7 Support</h3>
-                <p>Dedicated support</p>
+            <div class="benefit-item">
+                <div class="benefit-icon" aria-hidden="true">🎧</div>
+                <div class="benefit-content">
+                    <h4 class="benefit-title">24 / 7 Support</h4>
+                    <p class="benefit-sub">Dedicated support</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Funiro.</h3>
-                <p>400 University Drive Suite 200 Coral</p>
-                <p>Gables,</p>
-                <p>FL 33134 USA</p>
-            </div>
-            <div class="footer-section">
-                <h3>Links</h3>
-                <ul class="footer-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#shop">Shop</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Help</h3>
-                <ul class="footer-links">
-                    <li><a href="#payment">Payment Options</a></li>
-                    <li><a href="#returns">Returns</a></li>
-                    <li><a href="#privacy">Privacy Policies</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Newsletter</h3>
-                <div class="newsletter">
-                    <input type="email" placeholder="Enter Your Email Address">
-                    <button>SUBSCRIBE</button>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 class="footer-brand">Funiro.</h3>
+                    <p class="footer-address">400 University Drive Suite 200 Coral Gables, FL 33134 USA</p>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="shop.html" class="footer-link">Shop</a></li>
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Help</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Payment Options</a></li>
+                        <li><a href="#" class="footer-link">Returns</a></li>
+                        <li><a href="#" class="footer-link">Privacy Policies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Newsletter</h4>
+                    <form class="newsletter-form" id="newsletterFormCheckout">
+                        <div class="newsletter-input-wrapper">
+                            <input type="email" class="newsletter-input" placeholder="Enter Your Email Address" required>
+                            <button type="submit" class="newsletter-button">SUBSCRIBE</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-        <div class="copyright">
-            2023 furino. All rights reserved
+        <div class="footer-copyright">
+            <div class="container">
+                <p class="copyright-text">2023 furino. All rights reserved</p>
+            </div>
         </div>
     </footer>
 
-    <script src="./assets/js/checkout.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/checkout.js"></script>
 </body>
 </html>
