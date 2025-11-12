@@ -1,0 +1,61 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniro - Modern Furniture Store</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+ <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a class="logo" href="index.html">
+                    <img src="assets/images/logo.png" alt="Furniro Logo" class="logo-image">
+                    <span class="logo-text">Furniro</span>
+                </a>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="shop.html" class="nav-link">Shop</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+                 <div class="utility-icons">
+                    <a class="icon-link" href="account.html" aria-label="Account">
+                        <img class="icon-image" src="assets/images/icons/account_icon.png" alt="Account">
+                    </a>
+                    <a class="icon-link" href="#" aria-label="Search">
+                        <img class="icon-image" src="assets/images/icons/search_icon.png" alt="Search">
+                    </a>
+                    <a class="icon-link" href="wishlist.html" aria-label="Wishlist">
+                        <img class="icon-image" src="assets/images/icons/wishlist_icon.png" alt="Wishlist">
+                    </a>
+                    <a class="icon-link" href="cart.html" aria-label="Shopping Cart">
+                        <img class="icon-image" src="assets/images/icons/cart_icon.png" alt="Shopping Cart">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="wishlist-page">
+        <div class="container">
+            <h1 class="products-heading">My Wishlist</h1>
+
+            <div data-wishlist-empty class="wishlist-empty">
+                <p>No items in your wishlist yet.</p>
+                <a href="index.html" class="btn-primary btn-primary--sm">Browse products</a>
+            </div>
+
+            <div class="wishlist-grid" data-wishlist-grid></div>
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

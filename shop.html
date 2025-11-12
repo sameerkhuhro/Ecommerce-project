@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniro - Shop</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/shop.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="assets/images/logo.png" alt="Furniro Logo" class="logo-image">
+                    <span class="logo-text">Furniro</span>
+                </div>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="shop.html" class="nav-link active">Shop</a>
+                    <a href="#" class="nav-link">About</a>
+                    <a href="#" class="nav-link">Contact</a>
+                </nav>
+                <div class="utility-icons">
+                    <a class="icon-link" href="account.html" aria-label="Account">
+                        <img class="icon-image" src="assets/images/icons/account_icon.png" alt="Account">
+                    </a>
+                    <a class="icon-link" href="#" aria-label="Search">
+                        <img class="icon-image" src="assets/images/icons/search_icon.png" alt="Search">
+                    </a>
+                    <a class="icon-link" href="wishlist.html" aria-label="Wishlist">
+                        <img class="icon-image" src="assets/images/icons/wishlist_icon.png" alt="Wishlist">
+                    </a>
+                    <a class="icon-link" href="cart.html" aria-label="Shopping Cart">
+                        <img class="icon-image" src="assets/images/icons/cart_icon.png" alt="Shopping Cart">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="shop-hero" style="background-image: url('assets/images/shop_back.png'); background-size: cover; background-position: center;">
+        <div class="shop-hero-inner container">
+        
+            <h1 class="shop-title">Shop</h1>
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Shop</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Toolbar -->
+    <section class="shop-toolbar">
+        <div class="container toolbar-inner">
+            <div class="toolbar-left">
+                <button class="tool-btn" id="filterToggle" aria-expanded="false">
+                    <img src="assets/images/icons/filter_icon.png" alt="" class="tool-icon">
+                    Filter
+                </button>
+                <div class="divider"></div>
+                <div class="showing">Showing <span id="visibleCount">1–16</span> of <span id="totalCount">32</span> results</div>
+            </div>
+            <div class="toolbar-right">
+                <label class="tool-label" for="showCount">Show</label>
+                <select id="showCount" class="tool-select">
+                    <option value="16" selected>16</option>
+                    <option value="12">12</option>
+                    <option value="8">8</option>
+                </select>
+                <label class="tool-label" for="sortBy">Sort by</label>
+                <select id="sortBy" class="tool-select">
+                    <option value="default" selected>Default</option>
+                    <option value="price-asc">Price: Low to High</option>
+                    <option value="price-desc">Price: High to Low</option>
+                    <option value="name-asc">Name: A–Z</option>
+                    <option value="name-desc">Name: Z–A</option>
+                </select>
+            </div>
+        </div>
+        <div class="container filter-panel" id="filterPanel" hidden>
+            <div class="filter-row">
+                <div class="filter-group">
+                    <span class="filter-title">Category</span>
+                    <button class="chip">Chair</button>
+                    <button class="chip">Sofa</button>
+                    <button class="chip">Table</button>
+                    <button class="chip">Decor</button>
+                </div>
+                <div class="filter-group">
+                    <span class="filter-title">Badge</span>
+                    <button class="chip">Sale</button>
+                    <button class="chip">New</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Grid -->
+    <section class="shop-products">
+        <div class="container">
+            <div class="product-grid" id="productGrid">
+                <article class="product-card" data-name="Syltherine" data-price="2500000">
+                    <div class="image-wrap">
+                        <img src="assets/images/Our_products/syltherine.img.png" alt="Syltherine" class="product-img">
+                        <span class="badge badge-sale">-30%</span>
+                        <div class="overlay">
+                            <button class="btn-add">Add to cart</button>
+                            <div class="overlay-actions">
+                                <button class="overlay-action"><img src="assets/images/icons/share.png" alt=""> Share</button>
+                                <button class="overlay-action"><img src="assets/images/icons/compare-icon.png" alt=""> Compare</button>
+                                <button class="overlay-action"><img src="assets/images/icons/Heart.png" alt=""> Like</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Syltherine</h3>
+                        <p class="card-sub">Stylish cafe chair</p>
+                        <div class="price-row">
+                            <span class="price">Rp 2.500.000</span>
+                            <span class="price-old">Rp 3.500.000</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-name="Leviosa" data-price="2500000">
+                    <div class="image-wrap">
+                        <img src="assets/images/Our_products/tenny.jpg" alt="Leviosa" class="product-img">
+                        <div class="overlay">
+                            <button class="btn-add">Add to cart</button>
+                            <div class="overlay-actions">
+                                <button class="overlay-action"><img src="assets/images/icons/share.png" alt=""> Share</button>
+                                <button class="overlay-action"><img src="assets/images/icons/compare-icon.png" alt=""> Compare</button>
+                                <button class="overlay-action"><img src="assets/images/icons/Heart.png" alt=""> Like</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Leviosa</h3>
+                        <p class="card-sub">Stylish cafe chair</p>
+                        <div class="price-row">
+                            <span class="price">Rp 2.500.000</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-name="Lolito" data-price="7000000">
+                    <div class="image-wrap">
+                        <img src="assets/images/Our_products/lolito.png" alt="Lolito" class="product-img">
+                        <span class="badge badge-sale">-50%</span>
+                        <div class="overlay">
+                            <button class="btn-add">Add to cart</button>
+                            <div class="overlay-actions">
+                                <button class="overlay-action"><img src="assets/images/icons/share.png" alt=""> Share</button>
+                                <button class="overlay-action"><img src="assets/images/icons/compare-icon.png" alt=""> Compare</button>
+                                <button class="overlay-action"><img src="assets/images/icons/Heart.png" alt=""> Like</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Lolito</h3>
+                        <p class="card-sub">Luxury big sofa</p>
+                        <div class="price-row">
+                            <span class="price">Rp 7.000.000</span>
+                            <span class="price-old">Rp 14.000.000</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-name="Respira" data-price="500000">
+                    <div class="image-wrap">
+                        <img src="assets/images/Our_products/respira_img.png" alt="Respira" class="product-img">
+                        <span class="badge badge-new">New</span>
+                        <div class="overlay">
+                            <button class="btn-add">Add to cart</button>
+                            <div class="overlay-actions">
+                                <button class="overlay-action"><img src="assets/images/icons/share.png" alt=""> Share</button>
+                                <button class="overlay-action"><img src="assets/images/icons/compare-icon.png" alt=""> Compare</button>
+                                <button class="overlay-action"><img src="assets/images/icons/Heart.png" alt=""> Like</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Respira</h3>
+                        <p class="card-sub">Outdoor bar table and stool</p>
+                        <div class="price-row">
+                            <span class="price">Rp 500.000</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-name="Grifo" data-price="1500000">
+                    <div class="image-wrap">
+                        <img src="assets/images/Our_products/grifo.png" alt="Grifo" class="product-img">
+                        <div class="overlay">
+                            <button class="btn-add">Add to cart</button>
+                            <div class="overlay-actions">
+                                <button class="overlay-action"><img src="assets/images/icons/share.png" alt=""> Share</button>
+                                <button class="overlay-action"><img src="assets/images/icons/compare-icon.png" alt=""> Compare</button>
+                                <button class="overlay-action"><img src="assets/images/icons/Heart.png" alt=""> Like</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Grifo</h3>
+                        <p class="card-sub">Night lamp</p>
+                        <div class="price-row">
+                            <span class="price">Rp 1.500.000</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-name="Muggo" data-price="150000">
+                    <div class="image-wrap">
+                        <img src="assets/images/Our_products/muggo.png" alt="Muggo" class="product-img">
+                        <span class="badge badge-new">New</span>
+                        <div class="overlay">
+                            <button class="btn-add">Add to cart</button>
+                            <div class="overlay-actions">
+                                <button class="overlay-action"><img src="assets/images/icons/share.png" alt=""> Share</button>
+                                <button class="overlay-action"><img src="assets/images/icons/compare-icon.png" alt=""> Compare</button>
+                                <button class="overlay-action"><img src="assets/images/icons/Heart.png" alt=""> Like</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Muggo</h3>
+                        <p class="card-sub">Small mug</p>
+                        <div class="price-row">
+                            <span class="price">Rp 150.000</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-name="Pingky" data-price="7000000">
+                    <div class="image-wrap">
+                        <img src="assets/images/Our_products/pingkey.png" alt="Pingky" class="product-img">
+                        <span class="badge badge-sale">-50%</span>
+                        <div class="overlay">
+                            <button class="btn-add">Add to cart</button>
+                            <div class="overlay-actions">
+                                <button class="overlay-action"><img src="assets/images/icons/share.png" alt=""> Share</button>
+                                <button class="overlay-action"><img src="assets/images/icons/compare-icon.png" alt=""> Compare</button>
+                                <button class="overlay-action"><img src="assets/images/icons/Heart.png" alt=""> Like</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Pingky</h3>
+                        <p class="card-sub">Cute bed set</p>
+                        <div class="price-row">
+                            <span class="price">Rp 7.000.000</span>
+                            <span class="price-old">Rp 14.000.000</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-name="Potty" data-price="500000">
+                    <div class="image-wrap">
+                        <img src="assets/images/Our_products/potty.png" alt="Potty" class="product-img">
+                        <span class="badge badge-new">New</span>
+                        <div class="overlay">
+                            <button class="btn-add">Add to cart</button>
+                            <div class="overlay-actions">
+                                <button class="overlay-action"><img src="assets/images/icons/share.png" alt=""> Share</button>
+                                <button class="overlay-action"><img src="assets/images/icons/compare-icon.png" alt=""> Compare</button>
+                                <button class="overlay-action"><img src="assets/images/icons/Heart.png" alt=""> Like</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Potty</h3>
+                        <p class="card-sub">Minimalist flower pot</p>
+                        <div class="price-row">
+                            <span class="price">Rp 500.000</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- duplicates to make 16 items -->
+                <article class="product-card" data-name="Syltherine" data-price="2500000">
+                    <div class="image-wrap">
+                        <img src="assets/images/Our_products/syltherine.img.png" alt="Syltherine" class="product-img">
+                        <span class="badge badge-sale">-30%</span>
+                        <div class="overlay">
+                            <button class="btn-add">Add to cart</button>
+                            <div class="overlay-actions">
+                                <button class="overlay-action"><img src="assets/images/icons/share.png" alt=""> Share</button>
+                                <button class="overlay-action"><img src="assets/images/icons/compare-icon.png" alt=""> Compare</button>
+                                <button class="overlay-action"><img src="assets/images/icons/Heart.png" alt=""> Like</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Syltherine</h3>
+                        <p class="card-sub">Stylish cafe chair</p>
+                        <div class="price-row">
+                            <span class="price">Rp 2.500.000</span>
+                            <span class="price-old">Rp 3.500.000</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-name="Leviosa" data-price="2500000">
+                    <div class="image-wrap">
+                        <img src="assets/images/Our_products/tenny.jpg" alt="Leviosa" class="product-img">
+                        <div class="overlay">
+                            <button class="btn-add">Add to cart</button>
+                            <div class="overlay-actions">
+                                <button class="overlay-action"><img src="assets/images/icons/share.png" alt=""> Share</button>
+                                <button class="overlay-action"><img src="assets/images/icons/compare-icon.png" alt=""> Compare</button>
+                                <button class="overlay-action"><img src="assets/images/icons/Heart.png" alt=""> Like</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Leviosa</h3>
+                        <p class="card-sub">Stylish cafe chair</p>
+                        <div class="price-row">
+                            <span class="price">Rp 2.500.000</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-name="Lolito" data-price="7000000">
+                    <div class="image-wrap">
+                        <img src="assets/images/Our_products/lolito.png" alt="Lolito" class="product-img">
+                        <span class="badge badge-sale">-50%</span>
+                        <div class="overlay">
+                            <button class="btn-add">Add to cart</button>
+                            <div class="overlay-actions">
+                                <button class="overlay-action"><img src="assets/images/icons/share.png" alt=""> Share</button>
+                                <button class="overlay-action"><img src="assets/images/icons/compare-icon.png" alt=""> Compare</button>
+                                <button class="overlay-action"><img src="assets/images/icons/Heart.png" alt=""> Like</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Lolito</h3>
+                        <p class="card-sub">Luxury big sofa</p>
+                        <div class="price-row">
+                            <span class="price">Rp 7.000.000</span>
+                            <span class="price-old">Rp 14.000.000</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-name="Respira" data-price="500000">
+                    <div class="image-wrap">
+                        <img src="assets/images/Our_products/respira_img.png" alt="Respira" class="product-img">
+                        <span class="badge badge-new">New</span>
+                        <div class="overlay">
+                            <button class="btn-add">Add to cart</button>
+                            <div class="overlay-actions">
+                                <button class="overlay-action"><img src="assets/images/icons/share.png" alt=""> Share</button>
+                                <button class="overlay-action"><img src="assets/images/icons/compare-icon.png" alt=""> Compare</button>
+                                <button class="overlay-action"><img src="assets/images/icons/Heart.png" alt=""> Like</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Respira</h3>
+                        <p class="card-sub">Outdoor bar table and stool</p>
+                        <div class="price-row">
+                            <span class="price">Rp 500.000</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="page-btn active" data-page="1">1</button>
+                <button class="page-btn" data-page="2">2</button>
+                <button class="page-btn" data-page="3">3</button>
+                <button class="page-btn next" data-page="next">Next</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Strip -->
+    <section class="benefits">
+        <div class="container benefits-inner">
+            <div class="benefit-item">
+                <div class="benefit-icon" aria-hidden="true">🏆</div>
+                <div class="benefit-content">
+                    <h4 class="benefit-title">High Quality</h4>
+                    <p class="benefit-sub">crafted from top materials</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon" aria-hidden="true">✅</div>
+                <div class="benefit-content">
+                    <h4 class="benefit-title">Warranty Protection</h4>
+                    <p class="benefit-sub">Over 2 years</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon" aria-hidden="true">📦</div>
+                <div class="benefit-content">
+                    <h4 class="benefit-title">Free Shipping</h4>
+                    <p class="benefit-sub">Order over 150 $</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon" aria-hidden="true">🎧</div>
+                <div class="benefit-content">
+                    <h4 class="benefit-title">24 / 7 Support</h4>
+                    <p class="benefit-sub">Dedicated support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 class="footer-brand">Funiro.</h3>
+                    <p class="footer-address">400 University Drive Suite 200 Coral Gables, FL 33134 USA</p>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="shop.html" class="footer-link">Shop</a></li>
+                        <li><a href="#" class="footer-link">About</a></li>
+                        <li><a href="#" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Help</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Payment Options</a></li>
+                        <li><a href="#" class="footer-link">Returns</a></li>
+                        <li><a href="#" class="footer-link">Privacy Policies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Newsletter</h4>
+                    <form class="newsletter-form" id="newsletterFormShop">
+                        <div class="newsletter-input-wrapper">
+                            <input type="email" class="newsletter-input" placeholder="Enter Your Email Address" required>
+                            <button type="submit" class="newsletter-button">SUBSCRIBE</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                <p class="copyright-text">2023 furino. All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/shop.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniro - About</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .about-hero { background:#f9f1e7; padding:48px 0; }
+        .about-hero h1 { margin:0; }
+        .about-content { padding:40px 0 64px; display:grid; gap:24px; }
+        .about-cards { display:grid; grid-template-columns: repeat(3, 1fr); gap:24px; }
+        .about-card { background:#fff; border:1px solid #eee; border-radius:10px; padding:20px; }
+        .about-card h3 { margin:0 0 8px; }
+        @media (max-width: 900px){ .about-cards { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="assets/images/logo.png" alt="Furniro Logo" class="logo-image">
+                    <span class="logo-text">Furniro</span>
+                </div>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="shop.html" class="nav-link">Shop</a>
+                    <a href="about.html" class="nav-link active">About</a>
+                    <a href="conatct.html" class="nav-link">Contact</a>
+                </nav>
+                <div class="utility-icons">
+                    <a class="icon-link" href="account.html" aria-label="Account">
+                        <img class="icon-image" src="assets/images/icons/account_icon.png" alt="Account">
+                    </a>
+                    <a class="icon-link" href="#" aria-label="Search">
+                        <img class="icon-image" src="assets/images/icons/search_icon.png" alt="Search">
+                    </a>
+                    <a class="icon-link" href="wishlist.html" aria-label="Wishlist">
+                        <img class="icon-image" src="assets/images/icons/wishlist_icon.png" alt="Wishlist">
+                    </a>
+                    <a class="icon-link" href="cart.html" aria-label="Shopping Cart">
+                        <img class="icon-image" src="assets/images/icons/cart_icon.png" alt="Shopping Cart">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="about-hero">
+        <div class="container">
+            <h1>About Furniro</h1>
+            <p class="muted">Thoughtfully designed furniture for modern living.</p>
+        </div>
+    </section>
+
+    <main class="about-content">
+        <div class="container">
+            <p>We create beautiful, long-lasting furniture crafted from responsible materials. Our mission is to make elevated, functional design accessible to everyone.</p>
+
+            <div class="about-cards">
+                <article class="about-card">
+                    <h3>Our Materials</h3>
+                    <p>Premium woods, durable fabrics, and planet-friendly finishes ensure quality that lasts.</p>
+                </article>
+                <article class="about-card">
+                    <h3>Design Philosophy</h3>
+                    <p>Minimal, timeless pieces that complement any home, built with everyday life in mind.</p>
+                </article>
+                <article class="about-card">
+                    <h3>Customer Care</h3>
+                    <p>We stand by our products with generous warranties and dedicated support.</p>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-copyright">
+                <p class="copyright-text">2025 Furniro. All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+
+    <!-- On About page, search icon will redirect to Home and then open search there -->
+</body>
+</html>
+
+

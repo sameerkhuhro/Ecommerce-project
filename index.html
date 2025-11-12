@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniro - Modern Furniture Store</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <div class="logo">
+                    <img src="assets/images/logo.png" alt="Furniro Logo" class="logo-image">
+                    <span class="logo-text">Furniro</span>
+                </div >
+
+                <!-- Navigation -->
+                <nav class="nav">
+                    <a href="#" class="nav-link active">Home</a>
+                    <a href="#" class="nav-link">Shop</a>
+                    <a href="#" class="nav-link">About</a>
+                    <a href="#" class="nav-link">Contact</a>
+                </nav>
+
+                <!-- Utility Icons -->
+                <div class="utility-icons">
+                    <a class="icon-link" href="account.html" aria-label="Account">
+                        <img class="icon-image" src="assets/images/icons/account_icon.png" alt="Account">
+                    </a>
+                    <a class="icon-link" href="#" aria-label="Search">
+                        <img class="icon-image" src="assets/images/icons/search_icon.png" alt="Search">
+                    </a>
+                    <a class="icon-link" href="wishlist.html" aria-label="Wishlist">
+                        <img class="icon-image" src="assets/images/icons/wishlist_icon.png" alt="Wishlist">
+                    </a>
+                    <a class="icon-link" href="cart.html" aria-label="Shopping Cart">
+                        <img class="icon-image" src="assets/images/icons/cart_icon.png" alt="Shopping Cart">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Background Image -->
+        <div class="hero-background">
+            <img src="assets/images/hero-room-scene.png" alt="Modern minimalist interior with furniture" class="hero-bg-image">
+        </div>
+
+        <!-- Promotional Content Box -->
+        <div class="promo-box">
+            <div class="promo-content">
+                <p class="promo-label">New Arrival</p>
+                <h1 class="promo-headline">Discover Our Collection</h1>
+                <p class="promo-description">
+<p>Check out our latest arrivals! From comfortable cotton tees to stylish sneakers and premium leather wallets, we have something for everyone.</p>
+                </p>
+                <a href="shop.html" class="browse-button">Shop Now</a>
+
+               
+            </div>
+        </div>
+    </section>
+
+
+     <!-- Browse Section -->
+    <section class="browse-section">
+        <div class="container">
+            <h2 class="browse-heading">Browse The Range</h2>
+        </div>
+        <p class="browse-description">Find the perfect outfit or accessory for every occasion. From casual wear to statement pieces, 
+        our collection combines style, comfort, and quality.</p>
+            
+            <div class="range-cards">
+                <div class="range-card">
+                    <img src="assets/images/dinning.png" alt="Dining room interior" class="range-card-image">
+                    <h3 class="range-card-title">Dining</h3>
+                </div>
+                <div class="range-card">
+                    <img src="assets/images/living.png" alt="Living room interior" class="range-card-image">
+                    <h3 class="range-card-title">Living</h3>
+                </div>
+                <div class="range-card">
+                    <img src="assets/images/bedroom.png" alt="Bedroom interior" class="range-card-image">
+                    <h3 class="range-card-title">Bedroom</h3>
+                </div>
+            </div>
+    </section>
+
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <h2 class="products-heading">Our Products</h2>
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <article class="product-card" data-product-id="syltherine" data-product-name="Syltherine" data-product-subtitle="Stylish cafe chair" data-product-price="Rp 2.500.000" data-product-price-old="Rp 3.500.000" data-product-image="assets/images/Our_products/syltherine.img.png" data-product-badge="sale" data-product-badge-text="-30%">
+                    <div class="product-image-wrapper">
+                        <img src="assets/images/Our_products/syltherine.img.png" alt="Syltherine - Stylish cafe chair" class="product-image">
+                        <span class="badge badge-sale">-30%</span>
+                        <div class="product-overlay">
+                            <button class="btn-add-cart" data-product="Syltherine">Add to cart</button>
+                            <div class="overlay-actions">
+                                <button class="overlay-action" data-action="share">
+                                    <img class="action-icon" src="assets/images/icons/share.png" alt="Share">
+                                    <span>Share</span>
+                                </button>
+                                <button class="overlay-action" data-action="compare">
+                                    <img class="action-icon" src="assets/images/icons/compare-icon.png" alt="Compare">
+                                    <span>Compare</span>
+                                </button>
+                                <button class="overlay-action like-toggle" aria-pressed="false" data-like-off="images/icons/like.png" data-like-on="images/icons/like-filled.png">
+                                    <img class="action-icon" src="assets/images/icons/Heart.png" alt="Like">
+                                    <span>Like</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Syltherine</h3>
+                        <p class="product-subtitle">Stylish cafe chair</p>
+                        <div class="product-prices">
+                            <span class="price">Rp 2.500.000</span>
+                            <span class="price-old">Rp 3.500.000</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 2 -->
+                <article class="product-card" data-product-id="leviosa" data-product-name="Leviosa" data-product-subtitle="Stylish cafe chair" data-product-price="Rp 2.500.000" data-product-image="assets/images/Our_products/tenny.jpg">
+                    <div class="product-image-wrapper">
+                        <img src="assets/images/Our_products/tenny.jpg" alt="Leviosa - Stylish cafe chair" class="product-image">
+                        <div class="product-overlay">
+                        
+                                <button class="btn-add-cart" data-product="Syltherine">Add to cart</button>
+                            <div class="overlay-actions">
+                                <button class="overlay-action" data-action="share">
+                                    <img class="action-icon" src="assets/images/icons/share.png" alt="Share">
+                                    <span>Share</span>
+                                </button>
+                                <button class="overlay-action" data-action="compare">
+                                    <img class="action-icon" src="assets/images/icons/compare-icon.png" alt="Compare">
+                                    <span>Compare</span>
+                                </button>
+                                <button class="overlay-action like-toggle" aria-pressed="false" data-like-off="images/icons/like.png" data-like-on="images/icons/like-filled.png">
+                                    <img class="action-icon" src="assets/images/icons/Heart.png" alt="Like">
+                                    <span>Like</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Leviosa</h3>
+                        <p class="product-subtitle">Stylish cafe chair</p>
+                        <div class="product-prices">
+                            <span class="price">Rp 2.500.000</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 3 -->
+                <article class="product-card" data-product-id="lolito" data-product-name="Lolito" data-product-subtitle="Luxury big sofa" data-product-price="Rp 7.000.000" data-product-price-old="Rp 14.000.000" data-product-image="assets/images/Our_products/lolito.png" data-product-badge="sale" data-product-badge-text="-50%">
+                    <div class="product-image-wrapper">
+                        <img src="assets/images/Our_products/lolito.png" alt="Lolito - Luxury big sofa" class="product-image">
+                        <span class="badge badge-sale">-50%</span>
+                        <div class="product-overlay">
+                            
+                                <button class="btn-add-cart" data-product="Syltherine">Add to cart</button>
+                            <div class="overlay-actions">
+                                <button class="overlay-action" data-action="share">
+                                    <img class="action-icon" src="assets/images/icons/share.png" alt="Share">
+                                    <span>Share</span>
+                                </button>
+                                <button class="overlay-action" data-action="compare">
+                                    <img class="action-icon" src="assets/images/icons/compare-icon.png" alt="Compare">
+                                    <span>Compare</span>
+                                </button>
+                                <button class="overlay-action like-toggle" aria-pressed="false" data-like-off="images/icons/like.png" data-like-on="images/icons/like-filled.png">
+                                    <img class="action-icon" src="assets/images/icons/Heart.png" alt="Like">
+                                    <span>Like</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Lolito</h3>
+                        <p class="product-subtitle">Luxury big sofa</p>
+                        <div class="product-prices">
+                            <span class="price">Rp 7.000.000</span>
+                            <span class="price-old">Rp 14.000.000</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 4 -->
+                <article class="product-card" data-product-id="respira" data-product-name="Respira" data-product-subtitle="Outdoor bar table and stool" data-product-price="Rp 500.000" data-product-image="assets/images/Our_products/respira_img.png" data-product-badge="new" data-product-badge-text="New">
+                    <div class="product-image-wrapper">
+                        <img src="assets/images/Our_products/respira_img.png" alt="Respira - Outdoor bar table and stool" class="product-image">
+                        <span class="badge badge-new">New</span>
+                        <div class="product-overlay">
+                          
+                                <button class="btn-add-cart" data-product="Syltherine">Add to cart</button>
+                            <div class="overlay-actions">
+                                <button class="overlay-action" data-action="share">
+                                    <img class="action-icon" src="assets/images/icons/share.png" alt="Share">
+                                    <span>Share</span>
+                                </button>
+                                <button class="overlay-action" data-action="compare">
+                                    <img class="action-icon" src="assets/images/icons/compare-icon.png" alt="Compare">
+                                    <span>Compare</span>
+                                </button>
+                                <button class="overlay-action like-toggle" aria-pressed="false" data-like-off="images/icons/like.png" data-like-on="images/icons/like-filled.png">
+                                    <img class="action-icon" src="assets/images/icons/Heart.png" alt="Like">
+                                    <span>Like</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Respira</h3>
+                        <p class="product-subtitle">Outdoor bar table and stool</p>
+                        <div class="product-prices">
+                            <span class="price">Rp 500.000</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 5 -->
+                <article class="product-card" data-product-id="grifo" data-product-name="Grifo" data-product-subtitle="Night lamp" data-product-price="Rp 1.500.000" data-product-image="assets/images/Our_products/grifo.png">
+                    <div class="product-image-wrapper">
+                        <img src="assets/images/Our_products/grifo.png" alt="Grifo - Night lamp" class="product-image">
+                        <div class="product-overlay">
+                          
+                               <button class="btn-add-cart" data-product="Syltherine">Add to cart</button>
+                            <div class="overlay-actions">
+                                <button class="overlay-action" data-action="share">
+                                    <img class="action-icon" src="assets/images/icons/share.png" alt="Share">
+                                    <span>Share</span>
+                                </button>
+                                <button class="overlay-action" data-action="compare">
+                                    <img class="action-icon" src="assets/images/icons/compare-icon.png" alt="Compare">
+                                    <span>Compare</span>
+                                </button>
+                                <button class="overlay-action like-toggle" aria-pressed="false" data-like-off="images/icons/like.png" data-like-on="images/icons/like-filled.png">
+                                    <img class="action-icon" src="assets/images/icons/Heart.png" alt="Like">
+                                    <span>Like</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Grifo</h3>
+                        <p class="product-subtitle">Night lamp</p>
+                        <div class="product-prices">
+                            <span class="price">Rp 1.500.000</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 6 -->
+                <article class="product-card" data-product-id="muggo" data-product-name="Muggo" data-product-subtitle="Small mug" data-product-price="Rp 150.000" data-product-image="assets/images/Our_products/muggo.png" data-product-badge="new" data-product-badge-text="New">
+                    <div class="product-image-wrapper">
+                        <img src="assets/images/Our_products/muggo.png" alt="Muggo - Small mug" class="product-image">
+                        <span class="badge badge-new">New</span>
+                        <div class="product-overlay">
+                           
+                               <button class="btn-add-cart" data-product="Syltherine">Add to cart</button>
+                            <div class="overlay-actions">
+                                <button class="overlay-action" data-action="share">
+                                    <img class="action-icon" src="assets/images/icons/share.png" alt="Share">
+                                    <span>Share</span>
+                                </button>
+                                <button class="overlay-action" data-action="compare">
+                                    <img class="action-icon" src="assets/images/icons/compare-icon.png" alt="Compare">
+                                    <span>Compare</span>
+                                </button>
+                                <button class="overlay-action like-toggle" aria-pressed="false" data-like-off="images/icons/like.png" data-like-on="images/icons/like-filled.png">
+                                    <img class="action-icon" src="assets/images/icons/Heart.png" alt="Like">
+                                    <span>Like</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Muggo</h3>
+                        <p class="product-subtitle">Small mug</p>
+                        <div class="product-prices">
+                            <span class="price">Rp 150.000</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 7 -->
+                <article class="product-card" data-product-id="pingky" data-product-name="Pingky" data-product-subtitle="Cute bed set" data-product-price="Rp 7.000.000" data-product-price-old="Rp 14.000.000" data-product-image="assets/images/Our_products/pingkey.png" data-product-badge="sale" data-product-badge-text="-50%">
+                    <div class="product-image-wrapper">
+                        <img src="assets/images/Our_products/pingkey.png" alt="Pingky - Cute bed set" class="product-image">
+                        <span class="badge badge-sale">-50%</span>
+                        <div class="product-overlay">
+                           
+                                <button class="btn-add-cart" data-product="Syltherine">Add to cart</button>
+                            <div class="overlay-actions">
+                                <button class="overlay-action" data-action="share">
+                                    <img class="action-icon" src="assets/images/icons/share.png" alt="Share">
+                                    <span>Share</span>
+                                </button>
+                                <button class="overlay-action" data-action="compare">
+                                    <img class="action-icon" src="assets/images/icons/compare-icon.png" alt="Compare">
+                                    <span>Compare</span>
+                                </button>
+                                <button class="overlay-action like-toggle" aria-pressed="false" data-like-off="images/icons/like.png" data-like-on="images/icons/like-filled.png">
+                                    <img class="action-icon" src="assets/images/icons/Heart.png" alt="Like">
+                                    <span>Like</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Pingky</h3>
+                        <p class="product-subtitle">Cute bed set</p>
+                        <div class="product-prices">
+                            <span class="price">Rp 7.000.000</span>
+                            <span class="price-old">Rp 14.000.000</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 8 -->
+                <article class="product-card" data-product-id="potty" data-product-name="Potty" data-product-subtitle="Minimalist flower pot" data-product-price="Rp 500.000" data-product-image="assets/images/Our_products/potty.png" data-product-badge="new" data-product-badge-text="New">
+                    <div class="product-image-wrapper">
+                        <img src="assets/images/Our_products/potty.png" alt="Potty - Minimalist flower pot" class="product-image">
+                        <span class="badge badge-new">New</span>
+                        <div class="product-overlay">
+                           
+                               <button class="btn-add-cart" data-product="Syltherine">Add to cart</button>
+                            <div class="overlay-actions">
+                                <button class="overlay-action" data-action="share">
+                                    <img class="action-icon" src="assets/images/icons/share.png" alt="Share">
+                                    <span>Share</span>
+                                </button>
+                                <button class="overlay-action" data-action="compare">
+                                    <img class="action-icon" src="assets/images/icons/compare-icon.png" alt="Compare">
+                                    <span>Compare</span>
+                                </button>
+                                <button class="overlay-action like-toggle" aria-pressed="false" data-like-off="images/icons/like.png" data-like-on="images/icons/like-filled.png">
+                                    <img class="action-icon" src="assets/images/icons/Heart.png" alt="Like">
+                                    <span>Like</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Potty</h3>
+                        <p class="product-subtitle">Minimalist flower pot</p>
+                        <div class="product-prices">
+                            <span class="price">Rp 500.000</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="show-more-wrapper">
+                <button type="button" class="browse-button show-more-button" data-action="show-more">Show More</button>
+            </div>
+        </div>
+    </section>
+
+  <!-- Room Inspiration Section -->
+    <section class="room-inspiration-section">
+        <div class="container">
+            <div class="inspiration-wrapper">
+                <!-- Left Side - Text Content -->
+                <div class="inspiration-content">
+                    <h2 class="inspiration-heading">
+                        <span class="heading-main">50+ Beautiful rooms</span>
+                        <span class="heading-sub">inspiration</span>
+                    </h2>
+                    <p class="inspiration-description">
+                        Our designer already made a lot of beautiful prototipe of rooms that inspire you
+                    </p>
+                    <a href="#" class="browse-button inspiration-button">Explore More</a>
+                </div>
+
+                <!-- Right Side - Image Carousel -->
+                <div class="inspiration-carousel-wrapper">
+                    <div class="inspiration-carousel">
+                        <div class="carousel-container">
+                            <div class="carousel-track">
+                                <!-- Slide 1 - Bedroom -->
+                                <div class="carousel-slide active" data-slide="0">
+                                    <div class="slide-image-wrapper">
+                                        <img src="assets/images/image1.png" alt="Bedroom with minimalist design" class="slide-image">
+                                        <div class="slide-overlay">
+                                            <div class="slide-info">
+                                                <div class="slide-number">01 — Bed Room</div>
+                                                <div class="slide-title">Inner Peace</div>
+                                            </div>
+                                            <button class="slide-next-btn" aria-label="Next slide">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9 18L15 12L9 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 2 - Dining/Study Area -->
+                                <div class="carousel-slide" data-slide="1">
+                                    <div class="slide-image-wrapper">
+                                        <img src="assets/images/dinning.png" alt="Dining and study area" class="slide-image">
+                                        <div class="slide-overlay">
+                                            <div class="slide-info">
+                                                <div class="slide-number">02 — Dining Room</div>
+                                                <div class="slide-title">Modern Elegance</div>
+                                            </div>
+                                            <button class="slide-next-btn" aria-label="Next slide">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9 18L15 12L9 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 3 - Living Room -->
+                                <div class="carousel-slide" data-slide="2">
+                                    <div class="slide-image-wrapper">
+                                        <img src="assets/images/living.png" alt="Living room interior" class="slide-image">
+                                        <div class="slide-overlay">
+                                            <div class="slide-info">
+                                                <div class="slide-number">03 — Living Room</div>
+                                                <div class="slide-title">Cozy Comfort</div>
+                                            </div>
+                                            <button class="slide-next-btn" aria-label="Next slide">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9 18L15 12L9 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 4 - Bedroom 2 -->
+                                <div class="carousel-slide" data-slide="3">
+                                    <div class="slide-image-wrapper">
+                                        <img src="assets/images/bedroom.png" alt="Bedroom design" class="slide-image">
+                                        <div class="slide-overlay">
+                                            <div class="slide-info">
+                                                <div class="slide-number">04 — Bed Room</div>
+                                                <div class="slide-title">Serene Retreat</div>
+                                            </div>
+                                            <button class="slide-next-btn" aria-label="Next slide">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9 18L15 12L9 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Carousel Navigation Arrow -->
+                        <button class="carousel-arrow" aria-label="Next slide">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 18L15 12L9 6" stroke="#D4A574" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Carousel Navigation Dots -->
+                    <div class="carousel-dots">
+                        <button class="carousel-dot active" data-slide="0" aria-label="Slide 1"></button>
+                        <button class="carousel-dot" data-slide="1" aria-label="Slide 2"></button>
+                        <button class="carousel-dot" data-slide="2" aria-label="Slide 3"></button>
+                        <button class="carousel-dot" data-slide="3" aria-label="Slide 4"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+
+
+    <!-- Share Your Setup Section -->
+    <section class="share-setup-section">
+        <div class="container">
+            <div class="share-setup-header">
+                <p class="share-setup-label">Share your setup with</p>
+                <h2 class="share-setup-hashtag">#FurniRoFurniture</h2>
+            </div>
+            <div class="setup-grid">
+                <div class="setup-image-item">
+                    <img src="assets/images/furniture/image1.png" alt="Modern living space with plants and shelving" class="setup-image">
+                </div>
+                <div class="setup-image-item">
+                    <img src="assets/images/furniture/image2.png" alt="Clean desk setup with laptop" class="setup-image">
+                </div>
+                <div class="setup-image-item">
+                    <img src="assets/images/furniture/image3.png" alt="Luxurious bedroom with upholstered headboard" class="setup-image">
+                </div>
+                <div class="setup-image-item">
+                    <img src="assets/images/furniture/image4.png" alt="Rustic dining room with wooden table" class="setup-image">
+                </div>
+                <div class="setup-image-item">
+                    <img src="assets/images/furniture/image5.png" alt="Elegant armchair corner" class="setup-image">
+                </div>
+                <div class="setup-image-item">
+                    <img src="assets/images/furniture/image6.png" alt="Wooden stools with flowers" class="setup-image">
+                </div>
+                <div class="setup-image-item">
+                    <img src="assets/images/furniture/image7.png" alt="Modern dining room with abstract art" class="setup-image">
+                </div>
+                <div class="setup-image-item">
+                    <img src="assets/images/furniture/image8.png" alt="Minimalist kitchen with geometric tiles" class="setup-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Column 1: Brand Information -->
+                <div class="footer-column">
+                    <h3 class="footer-brand">Funiro.</h3>
+                    <p class="footer-address">400 University Drive Suite 200 Coral Gables, FL 33134 USA</p>
+                </div>
+
+                <!-- Column 2: Links -->
+                <div class="footer-column">
+                    <h4 class="footer-heading">Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Home</a></li>
+                        <li><a href="#" class="footer-link">Shop</a></li>
+                        <li><a href="#" class="footer-link">About</a></li>
+                        <li><a href="#" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Help -->
+                <div class="footer-column">
+                    <h4 class="footer-heading">Help</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Payment Options</a></li>
+                        <li><a href="#" class="footer-link">Returns</a></li>
+                        <li><a href="#" class="footer-link">Privacy Policies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Newsletter -->
+                <div class="footer-column">
+                    <h4 class="footer-heading">Newsletter</h4>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <div class="newsletter-input-wrapper">
+                            <input type="email" class="newsletter-input" placeholder="Enter Your Email Address" required>
+                            <button type="submit" class="newsletter-button">SUBSCRIBE</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Bar -->
+        <div class="footer-copyright">
+            <div class="container">
+                <p class="copyright-text">2023 furino. All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
+
