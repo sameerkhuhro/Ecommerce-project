@@ -118,6 +118,155 @@
   // Initialize
   renderPage();
 
+  // Setup overlay action handlers for share, compare, and like
+  function setupOverlayActions() {
+    grid.querySelectorAll('.overlay-action').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const card = btn.closest('.product-card');
+        if (!card) return;
+        
+        const btnText = btn.textContent.trim().toLowerCase();
+        
+        // Handle Share button
+        if (btnText.includes('share')) {
+          const productName = card.dataset.name || card.querySelector('.card-title')?.textContent || 'Product';
+          const productUrl = window.location.href;
+          
+          // Try to use Web Share API if available
+          if (navigator.share) {
+            navigator.share({
+              title: productName,
+              text: `Check out ${productName} on Furniro!`,
+              url: productUrl
+            }).catch(err => {
+              console.log('Error sharing:', err);
+              // Fallback: copy to clipboard
+              copyToClipboard(productUrl);
+              showToast('Link copied to clipboard!');
+            });
+          } else {
+            // Fallback: copy to clipboard
+            copyToClipboard(productUrl);
+            showToast('Link copied to clipboard!');
+          }
+        }
+        
+        // Handle Compare button
+        else if (btnText.includes('compare')) {
+          const productName = card.dataset.name || card.querySelector('.card-title')?.textContent || 'Product';
+          showToast(`${productName} added to compare`);
+          // You can add compare functionality here (store in localStorage, etc.)
+        }
+        
+        // Handle Like button
+        else if (btnText.includes('like')) {
+          const product = {
+            id: card.dataset.name?.toLowerCase() || `product-${Date.now()}`,
+            name: card.dataset.name || card.querySelector('.card-title')?.textContent || 'Product',
+            subtitle: card.querySelector('.card-sub')?.textContent || '',
+            price: card.querySelector('.price')?.textContent || 'Rp 0',
+            priceOld: card.querySelector('.price-old')?.textContent || '',
+            image: card.querySelector('.product-img')?.getAttribute('src') || '',
+            badge: card.querySelector('.badge')?.classList.contains('badge-sale') ? 'sale' : 
+                   card.querySelector('.badge')?.classList.contains('badge-new') ? 'new' : '',
+            badgeText: card.querySelector('.badge')?.textContent || ''
+          };
+          
+          // Use wishlist functions from script.js if available
+          if (typeof getWishlist === 'function' && typeof addToWishlist === 'function' && typeof removeFromWishlist === 'function') {
+            const wishlist = getWishlist();
+            const isLiked = wishlist.some(item => item.id === product.id);
+            
+            if (isLiked) {
+              removeFromWishlist(product.id);
+              btn.classList.remove('is-liked');
+              const img = btn.querySelector('img');
+              if (img) img.src = 'assets/images/icons/Heart.png';
+              showToast(`${product.name} removed from wishlist`);
+            } else {
+              addToWishlist(product);
+              btn.classList.add('is-liked');
+              const img = btn.querySelector('img');
+              if (img) img.src = 'assets/images/icons/Heart.png'; // You can use a filled heart icon here
+              showToast(`${product.name} added to wishlist`);
+            }
+          } else {
+            // Simple toggle if wishlist functions not available
+            btn.classList.toggle('is-liked');
+            const isLiked = btn.classList.contains('is-liked');
+            showToast(isLiked ? `${product.name} added to wishlist` : `${product.name} removed from wishlist`);
+          }
+        }
+      });
+    });
+  }
+  
+  // Helper function to copy to clipboard
+  function copyToClipboard(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text);
+    } else {
+      // Fallback for older browsers
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      textArea.style.position = 'fixed';
+      textArea.style.opacity = '0';
+      document.body.appendChild(textArea);
+      textArea.select();
+      try {
+        document.execCommand('copy');
+      } catch (err) {
+        console.error('Failed to copy:', err);
+      }
+      document.body.removeChild(textArea);
+    }
+  }
+  
+  // Helper function to show toast notification
+  // Use global showToast from script.js if available, otherwise create our own
+  function showToast(message) {
+    // Try to use global showToast from script.js (loaded before this file)
+    // Since script.js loads first, showToast should be in global scope
+    if (typeof window.showToast === 'function') {
+      window.showToast(message);
+      return;
+    }
+    
+    // Fallback: Create simple toast if global function not available
+    const toast = document.createElement('div');
+    toast.style.cssText = `
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #1A1A1A;
+      color: #FFFFFF;
+      padding: 12px 16px;
+      border-radius: 6px;
+      font-family: 'Poppins', sans-serif;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      z-index: 2000;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    `;
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    
+    requestAnimationFrame(() => {
+      toast.style.opacity = '1';
+      toast.style.transform = 'translateY(0)';
+    });
+    
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateY(10px)';
+      setTimeout(() => toast.remove(), 250);
+    }, 1600);
+  }
+
   // Make product cards clickable to navigate to product detail page
   grid.addEventListener('click', (e) => {
     const card = e.target.closest('.product-card');
@@ -164,5 +313,8 @@
   grid.querySelectorAll('.product-card').forEach(card => {
     card.style.cursor = 'pointer';
   });
+  
+  // Setup overlay actions
+  setupOverlayActions();
 })();
 
