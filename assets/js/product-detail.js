@@ -301,7 +301,23 @@ function setupEventListeners(product) {
     const compareBtn = document.getElementById('compareBtn');
     if (compareBtn) {
         compareBtn.addEventListener('click', () => {
-            if (typeof showToast === 'function') {
+            const productData = {
+                id: product.id || '',
+                name: product.name || '',
+                subtitle: product.subtitle || '',
+                price: product.price || '',
+                priceOld: product.priceOld || '',
+                image: product.image || '',
+                badge: product.badge || '',
+                badgeText: product.badgeText || ''
+            };
+            
+            if (typeof addToComparison === 'function') {
+                const result = addToComparison(productData);
+                if (typeof showToast === 'function') {
+                    showToast(result.message);
+                }
+            } else if (typeof showToast === 'function') {
                 showToast('Product added to comparison');
             }
         });

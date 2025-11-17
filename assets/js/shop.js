@@ -156,9 +156,31 @@
         
         // Handle Compare button
         else if (btnText.includes('compare')) {
-          const productName = card.dataset.name || card.querySelector('.card-title')?.textContent || 'Product';
-          showToast(`${productName} added to compare`);
-          // You can add compare functionality here (store in localStorage, etc.)
+          const product = {
+            id: card.dataset.name?.toLowerCase() || `product-${Date.now()}`,
+            name: card.dataset.name || card.querySelector('.card-title')?.textContent || 'Product',
+            subtitle: card.querySelector('.card-sub')?.textContent || '',
+            price: card.querySelector('.price')?.textContent || 'Rp 0',
+            priceOld: card.querySelector('.price-old')?.textContent || '',
+            image: card.querySelector('.product-img')?.getAttribute('src') || '',
+            badge: card.querySelector('.badge')?.classList.contains('badge-sale') ? 'sale' : 
+                   card.querySelector('.badge')?.classList.contains('badge-new') ? 'new' : '',
+            badgeText: card.querySelector('.badge')?.textContent || ''
+          };
+          
+          // Use comparison functions if available
+          if (typeof addToComparison === 'function') {
+            const result = addToComparison(product);
+            if (result.success) {
+              showToast(result.message);
+              // Optionally navigate to comparison page
+              // window.location.href = 'comparison.html';
+            } else {
+              showToast(result.message);
+            }
+          } else {
+            showToast(`${product.name} added to compare`);
+          }
         }
         
         // Handle Like button

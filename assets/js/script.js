@@ -911,5 +911,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
-
-

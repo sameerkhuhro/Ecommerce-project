@@ -40,6 +40,12 @@ function addToCart(product) {
     }
     
     saveCart(cart);
+    
+    // Open cart sidebar if available
+    if (typeof window.openCartSidebar === 'function') {
+        window.openCartSidebar();
+    }
+    
     return cart;
 }
 
